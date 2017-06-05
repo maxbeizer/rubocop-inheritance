@@ -1,0 +1,5 @@
+inherit_from: ../.rubocop.yml
+
+AllCops:
+  Exclude:
+    - 'some_dir/my_other_file.rb'

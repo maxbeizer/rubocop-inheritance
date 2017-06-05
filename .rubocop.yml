@@ -1,0 +1,45 @@
+# Ruby linting configuration.
+# We only worry about two kinds of issues: 'error' and anything less than that.
+# Error is not about severity, but about taste. Simple style choices that
+# never have a great excuse to be broken, such as 1.9 JSON-like hash syntax,
+# are errors. Choices that tend to have good exceptions in practice, such as
+# line length, are warnings.
+
+# If you'd like to make changes, a full list of available issues is at
+#   https://github.com/bbatsov/rubocop/blob/master/config/enabled.yml
+# A list of configurable issues is at:
+#   https://github.com/bbatsov/rubocop/blob/master/config/default.yml
+#
+# If you disable a check, document why.
+
+
+inherit_from: .rubocop_todo.yml
+
+StringLiterals:
+  EnforcedStyle: single_quotes
+  Severity: error
+
+Documentation:
+  Enabled: false
+
+FrozenStringLiteralComment:
+  Enabled: false
+
+AllCops:
+  TargetRubyVersion: 2.3
+  # Include gemspec and Rakefile
+  Include:
+    - '**/*.gemspec'
+    - '**/*.rake'
+    - '**/Gemfile'
+    - '**/Rakefile'
+    - '**/Capfile'
+    - '**/Guardfile'
+    - '**/Podfile'
+    - '**/Vagrantfile'
+  Exclude:
+    - 'db/**/*'
+    - 'bin/*'
+    - 'script/**/*'
+    - 'config/**/*'
+    - 'vendor/**/*'
