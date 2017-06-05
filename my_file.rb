@@ -1,7 +1,7 @@
 class MyClass
-  MY_CONSTANT = 'MY CONSTANT'
+  MY_CONSTANT = 'MY CONSTANT'.freeze
 
   def some_method
-    "double quotes :scream:"
+    'single quotes'
   end
 end
